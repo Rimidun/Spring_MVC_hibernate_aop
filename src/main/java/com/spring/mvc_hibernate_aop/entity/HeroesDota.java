@@ -1,15 +1,17 @@
 package com.spring.mvc_hibernate_aop.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 @Entity
-@Table(name="heroes_dota")
+@Table(name = "heroes_dota")
 public class HeroesDota {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
+    @Size(min = 2, max = 50, message = "name must be min 2 symbol")
     @Column(name = "name")
     private String name;
     @Column(name = "race")

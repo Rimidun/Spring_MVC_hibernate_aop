@@ -1,5 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 
@@ -35,7 +34,12 @@
 
 </table>
 
+<br>
 
+
+<input type="button" value="Add" onclick="window.location.href = 'addHeroesDota'"/>
+<br>
+<br>
 </body>
 
 </html>
