@@ -11,5 +11,9 @@ public interface HeroesDotaDAO {
     public void saveHeroesDota(HeroesDota heroesDota);
 
     public HeroesDota getHeroesDota(int id);
+
+
+    public void deleteHeroesDota(int id);
 }
+
 

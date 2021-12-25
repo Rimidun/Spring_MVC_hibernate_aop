@@ -5,7 +5,9 @@ import com.spring.mvc_hibernate_aop.service.HeroesDotaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -26,7 +28,7 @@ public class MyController {
     }
 
     @RequestMapping("/addHeroesDota")
-    public String addHeroesDota(Model model){
+    public String addHeroesDota(Model model) {
 
         HeroesDota heroesDota = new HeroesDota();
         model.addAttribute("heroes", heroesDota);
@@ -34,19 +36,26 @@ public class MyController {
     }
 
     @RequestMapping("/saveHeroesDota")
-    public String saveHeroesDota(@ModelAttribute("heroes") HeroesDota heroesDota){
+    public String saveHeroesDota(@ModelAttribute("heroes") HeroesDota heroesDota) {
 
-        heroesDotaService.saveHeroesDota(heroesDota );
+        heroesDotaService.saveHeroesDota(heroesDota);
         return "redirect:/";
     }
 
     @RequestMapping("/updateHeroesDota")
-    public String updateHeroesDota(@RequestParam("heroesId") int id, Model model){
+    public String updateHeroesDota(@RequestParam("heroesId") int id, Model model) {
 
         HeroesDota heroesDota = heroesDotaService.getHeroesDota(id);
         model.addAttribute("heroes", heroesDota);
 
         return "add-heroesdota";
+    }
 
+    @RequestMapping("/deleteHeroesDota")
+    public String deleteHeroesDota(@RequestParam("heroesId") int id, Model model) {
+
+        heroesDotaService.deleteHeroesDota(id);
+
+        return "redirect:/";
     }
 }

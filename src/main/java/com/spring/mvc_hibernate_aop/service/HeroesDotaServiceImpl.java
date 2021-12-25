@@ -32,6 +32,12 @@ public class HeroesDotaServiceImpl implements HeroesDotaService {
         return heroesDotaDAO.getHeroesDota(id);
     }
 
+    @Override
+    @Transactional
+    public void deleteHeroesDota(int id) {
+        heroesDotaDAO.deleteHeroesDota(id);
+    }
+
 
 }
 

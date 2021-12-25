@@ -26,14 +26,20 @@
 <c:param name="heroesId" value="${heroes.id}"/>
 </c:url>
 
+<c:url var="deleteButton" value="/deleteHeroesDota">
+<c:param name="heroesId" value="${heroes.id}"/>
+</c:url>
+
 <tr>
 
 <td>${heroes.name}</td>
 <td>${heroes.race}</td>
 <td>${heroes.attribute}</td>
 <td>${heroes.damage}</td>
-<td><input type="button" value="Update" onclick="window.location.href = '${updateButton}'"/></td>
-<td><input type="button" value="Delete" onclick="window.location.href = '${updateButton}'"/></td>
+<td>
+<input type="button" value="Update" onclick="window.location.href = '${updateButton}'"/>
+<input type="button" value="Delete" onclick="window.location.href = '${deleteButton}'"/>
+</td>
 
 </tr>
 
