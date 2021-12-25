@@ -10,11 +10,9 @@
 <br>
 <form:form action ="saveHeroesDota" modelAttribute="heroes">
 Name <form:input path="name"/>
-<form:errors path="name" cssStyle="color: #ff0000;"/>
 <br>
 <br>
 Race <form:input path="race"/>
-<form:errors path="race" cssStyle="color: #ff0000;"/>
 <br>
 <br>
 Attribute <form:select path="attribute">
@@ -25,7 +23,6 @@ Attribute <form:select path="attribute">
 <br>
 <br>
 Damage <form:input path="damage"/>
-<br>
 <br>
 <br>
 <input type="submit" value="OK"/>
