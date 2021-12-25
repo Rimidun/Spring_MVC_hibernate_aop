@@ -10,5 +10,7 @@ public interface HeroesDotaService {
 
     public void saveHeroesDota(HeroesDota heroesDota);
 
+    public HeroesDota getHeroesDota(int id);
+
 
 }

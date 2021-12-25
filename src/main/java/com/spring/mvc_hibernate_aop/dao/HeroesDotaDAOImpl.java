@@ -24,6 +24,13 @@ public class HeroesDotaDAOImpl implements HeroesDotaDAO {
     @Override
     public void saveHeroesDota(HeroesDota heroesDota) {
         Session session = sessionFactory.getCurrentSession();
-        session.save(heroesDota);
+        session.saveOrUpdate(heroesDota);
+    }
+
+    @Override
+    public HeroesDota getHeroesDota(int id) {
+        Session session = sessionFactory.getCurrentSession();
+        HeroesDota heroesDota = session.get(HeroesDota.class, id);
+        return heroesDota;
     }
 }

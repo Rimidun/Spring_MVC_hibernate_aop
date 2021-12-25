@@ -5,10 +5,10 @@
 <body>
 
 <h2>Dear Hero, Please enter your details</h2>
-
 <br>
 <br>
 <form:form action ="saveHeroesDota" modelAttribute="heroes">
+<form:hidden path="id"/>
 Name <form:input path="name"/>
 <br>
 <br>

@@ -7,7 +7,7 @@
 <h2>All Heroes in Dota 2</h2>
 <br>
 
-<table cellspacing="5" cellpadding="5">
+<table cellspacing="3" cellpadding="3">
 <tr>
 
 <th>Name</th>
@@ -15,11 +15,16 @@
 <th>Race</th>
 <th>Attribute</th>
 <th>Damage</th>
+<th>Operations</th>
 
 </tr>
 
 
 <c:forEach var="heroes" items="${allHeroes}">
+
+<c:url var="updateButton" value="/updateHeroesDota">
+<c:param name="heroesId" value="${heroes.id}"/>
+</c:url>
 
 <tr>
 
@@ -27,6 +32,8 @@
 <td>${heroes.race}</td>
 <td>${heroes.attribute}</td>
 <td>${heroes.damage}</td>
+<td><input type="button" value="Update" onclick="window.location.href = '${updateButton}'"/></td>
+<td><input type="button" value="Delete" onclick="window.location.href = '${updateButton}'"/></td>
 
 </tr>
 
