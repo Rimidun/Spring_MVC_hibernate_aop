@@ -18,8 +18,8 @@ public class HeroesDotaDAOImpl implements HeroesDotaDAO {
     @Override
     public List<HeroesDota> getAllHeroesDota() {
         Session session = sessionFactory.getCurrentSession();
-        List<HeroesDota> heroesDotas = session.createQuery("from HeroesDota", HeroesDota.class).getResultList();
-        return heroesDotas;
+        List<HeroesDota> heroesDota = session.createQuery("from HeroesDota", HeroesDota.class).getResultList();
+        return heroesDota;
     }
 
     @Override
